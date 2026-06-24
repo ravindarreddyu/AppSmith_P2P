@@ -36,6 +36,18 @@
     {
       "id": "Dashboard",
       "isDefault": false
+    },
+    {
+      "id": "BuyerDashboard",
+      "isDefault": false
+    },
+    {
+      "id": "VendorRecommendation",
+      "isDefault": false
+    },
+    {
+      "id": "PurchaseRequisitionDashboard",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

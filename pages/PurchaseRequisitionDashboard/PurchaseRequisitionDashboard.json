@@ -1,0 +1,279 @@
+{
+  "pageId": "PurchaseRequisitionDashboard",
+  "unpublishedPage": {
+    "layouts": [
+      {
+        "dsl": [
+          {
+            "type": "Container",
+            "version": 2,
+            "children": [
+              {
+                "type": "Text",
+                "children": [],
+                "key": "5sngqb12pq",
+                "isVisible": true,
+                "isDisabled": false,
+                "text": "Purchase Requisition Dashboard",
+                "fontSize": "24px",
+                "fontWeight": 700
+              }
+            ],
+            "key": "header_container",
+            "layout": "VERTICAL",
+            "height": 60,
+            "backgroundColor": "#FAFBFC"
+          },
+          {
+            "type": "Container",
+            "version": 2,
+            "children": [
+              {
+                "type": "Container",
+                "version": 2,
+                "children": [
+                  {
+                    "type": "Statistic",
+                    "children": [],
+                    "key": "stat_draft",
+                    "title": "Draft",
+                    "value": "{{getPRMetrics.data[0].draft_count || 0}}"
+                  }
+                ],
+                "key": "stat1",
+                "layout": "VERTICAL"
+              },
+              {
+                "type": "Container",
+                "version": 2,
+                "children": [
+                  {
+                    "type": "Statistic",
+                    "children": [],
+                    "key": "stat_submitted",
+                    "title": "Submitted",
+                    "value": "{{getPRMetrics.data[0].submitted_count || 0}}"
+                  }
+                ],
+                "key": "stat2",
+                "layout": "VERTICAL"
+              },
+              {
+                "type": "Container",
+                "version": 2,
+                "children": [
+                  {
+                    "type": "Statistic",
+                    "children": [],
+                    "key": "stat_approved",
+                    "title": "Approved",
+                    "value": "{{getPRMetrics.data[0].approved_count || 0}}"
+                  }
+                ],
+                "key": "stat3",
+                "layout": "VERTICAL"
+              },
+              {
+                "type": "Container",
+                "version": 2,
+                "children": [
+                  {
+                    "type": "Statistic",
+                    "children": [],
+                    "key": "stat_rejected",
+                    "title": "Rejected",
+                    "value": "{{getPRMetrics.data[0].rejected_count || 0}}"
+                  }
+                ],
+                "key": "stat4",
+                "layout": "VERTICAL"
+              }
+            ],
+            "key": "metrics_container",
+            "layout": "HORIZONTAL",
+            "spacing": 20,
+            "height": 120
+          },
+          {
+            "type": "Container",
+            "version": 2,
+            "children": [
+              {
+                "type": "Text",
+                "children": [],
+                "key": "section_title_list",
+                "text": "Purchase Requisitions",
+                "fontSize": "16px",
+                "fontWeight": 600
+              },
+              {
+                "type": "Container",
+                "version": 2,
+                "children": [
+                  {
+                    "type": "TextInput",
+                    "children": [],
+                    "key": "search_pr",
+                    "placeholder": "Search by PR ID or description",
+                    "isVisible": true,
+                    "isDisabled": false
+                  },
+                  {
+                    "type": "Select",
+                    "children": [],
+                    "key": "filter_status",
+                    "label": "Filter by Status",
+                    "options": [
+                      {
+                        "label": "All",
+                        "value": ""
+                      },
+                      {
+                        "label": "Draft",
+                        "value": "Draft"
+                      },
+                      {
+                        "label": "Submitted",
+                        "value": "Submitted"
+                      },
+                      {
+                        "label": "Approved",
+                        "value": "Approved"
+                      },
+                      {
+                        "label": "Rejected",
+                        "value": "Rejected"
+                      }
+                    ],
+                    "isVisible": true,
+                    "isDisabled": false
+                  }
+                ],
+                "key": "filters_container",
+                "layout": "HORIZONTAL",
+                "spacing": 10
+              },
+              {
+                "type": "Table",
+                "version": 2,
+                "children": [],
+                "key": "table_pr_list",
+                "data": "{{getPRList.data}}",
+                "columns": [
+                  {
+                    "label": "PR ID",
+                    "key": "pr_id"
+                  },
+                  {
+                    "label": "Description",
+                    "key": "description"
+                  },
+                  {
+                    "label": "Amount",
+                    "key": "amount"
+                  },
+                  {
+                    "label": "Status",
+                    "key": "status"
+                  },
+                  {
+                    "label": "Requestor",
+                    "key": "requestor_name"
+                  },
+                  {
+                    "label": "Request Date",
+                    "key": "request_date"
+                  },
+                  {
+                    "label": "View",
+                    "key": "view_action"
+                  }
+                ],
+                "isVisible": true,
+                "isDisabled": false,
+                "isSearchable": true,
+                "isSortable": true,
+                "height": 400
+              }
+            ],
+            "key": "pr_list_section",
+            "layout": "VERTICAL",
+            "spacing": 10,
+            "marginTop": 20
+          },
+          {
+            "type": "Container",
+            "version": 2,
+            "children": [
+              {
+                "type": "Text",
+                "children": [],
+                "key": "section_title_workflow",
+                "text": "Approval Workflow Status",
+                "fontSize": "16px",
+                "fontWeight": 600
+              },
+              {
+                "type": "Table",
+                "version": 2,
+                "children": [],
+                "key": "table_workflow",
+                "data": "{{getPRWorkflow.data}}",
+                "columns": [
+                  {
+                    "label": "PR ID",
+                    "key": "pr_id"
+                  },
+                  {
+                    "label": "Current Stage",
+                    "key": "current_stage"
+                  },
+                  {
+                    "label": "Current Approver",
+                    "key": "approver_name"
+                  },
+                  {
+                    "label": "Submitted Date",
+                    "key": "submitted_date"
+                  },
+                  {
+                    "label": "Days in Approval",
+                    "key": "days_pending"
+                  },
+                  {
+                    "label": "Expected Approval Date",
+                    "key": "expected_approval_date"
+                  }
+                ],
+                "isVisible": true,
+                "isDisabled": false,
+                "isSearchable": true,
+                "isSortable": true,
+                "height": 300
+              }
+            ],
+            "key": "workflow_section",
+            "layout": "VERTICAL",
+            "spacing": 10,
+            "marginTop": 20
+          }
+        ],
+        "layoutOnLoadActions": [],
+        "validationPaths": [],
+        "id": "0"
+      }
+    ],
+    "pageId": "PurchaseRequisitionDashboard"
+  },
+  "publishedPage": {
+    "layouts": [
+      {
+        "dsl": [],
+        "layoutOnLoadActions": [],
+        "validationPaths": [],
+        "id": "0"
+      }
+    ],
+    "pageId": "PurchaseRequisitionDashboard"
+  }
+}
