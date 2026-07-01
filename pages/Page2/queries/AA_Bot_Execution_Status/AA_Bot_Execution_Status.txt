@@ -1,0 +1,17 @@
+{
+  "filter": {
+    "operator": "eq",
+    "value": "{{AA_DeployBot.data.deploymentId}}",
+    "field": "deploymentId"
+  },
+  "sort": [
+    {
+      "field": "endDateTime",
+      "direction": "desc"
+    }
+  ],
+  "page": {
+    "offset": 0,
+    "length": 1
+  }
+}

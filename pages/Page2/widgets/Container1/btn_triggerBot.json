@@ -1,0 +1,75 @@
+{
+  "animateLoading": "{{appsmith.store.isBotRunning}}",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 19,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "animateLoading"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "animateLoading"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "play",
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{\n    !inp_value.text || appsmith.store.isBotRunning\n}}",
+  "isLoading": false,
+  "isVisible": "true",
+  "key": "22ktc86qw8",
+  "leftColumn": 5,
+  "minWidth": 120,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 11,
+  "mobileRightColumn": 27,
+  "mobileTopRow": 43,
+  "needsErrorInfo": false,
+  "onClick": "{{JSObject1.triggerRpaBot()}}",
+  "originalBottomRow": 19,
+  "originalTopRow": 15,
+  "parentColumnSpace": 15.59375,
+  "parentId": "fhl4enle8o",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": true,
+  "responsiveBehavior": "hug",
+  "rightColumn": 47,
+  "text": "Trigger Bot",
+  "tooltip": "Deploys AA Bot",
+  "topRow": 15,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "1pb608geze",
+  "widgetName": "btn_triggerBot"
+}
